@@ -29,7 +29,7 @@
                 <div class="dropdown-menu bg-transparent border-0">
                     <a href="{{ route('upload.form') }}" class="dropdown-item">Classify Emails</a>
                     <a href="{{ route('healthcare') }}" class="dropdown-item">Disease Diagnosis</a>
-                    <a href="{{ route('financialanalyst') }}" class="dropdown-item">Credit Worthiness</a>
+                    <a href="{{ route('financialanalyst') }}" class="dropdown-item">Loan Worthiness</a>
                 </div>
             </div>
 

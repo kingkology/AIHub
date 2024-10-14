@@ -54,6 +54,10 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/financialanalyst', [FinancialAnalysisController::class, 'analyse'])->name('analyse');
 });
 
+// Healthcare module
+Route::get('/healthcare', [HealthcareController::class, 'index'])->name('healthcare');
+Route::post('/healthcare/chat', [HealthcareController::class, 'chat']);
+
 // Admin Routes
 Route::middleware(['auth','admin'])->group(function () {
     // User management routes
@@ -67,10 +71,6 @@ Route::middleware(['auth','admin'])->group(function () {
     Route::get('/admin/users/reset-password/{id}', [UserController::class, 'resetPassword'])->name('admin.users.reset-password');
     Route::get('/admin/users/{id}/deactivate', [UserController::class, 'deactivate'])->name('admin.users.deactivate');
     Route::get('/admin/users/{id}/activate', [UserController::class, 'activate'])->name('admin.users.activate');
-
-    // Healthcare module
-    Route::get('/healthcare', [HealthcareController::class, 'index'])->name('healthcare');
-    Route::post('/healthcare/chat', [HealthcareController::class, 'chat']);
         
     // Viewing logs
     // Route::get('/admin/logs', [AdminController::class, 'viewLogs'])->name('admin.logs');
