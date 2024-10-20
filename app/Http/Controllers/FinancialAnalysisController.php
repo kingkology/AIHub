@@ -23,6 +23,7 @@ class FinancialAnalysisController extends Controller
 
     public function index()
     {
+        session()->pull('financial_thread_id', 'default');
         return view('financialanalyst');
     }
 
