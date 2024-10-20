@@ -19,6 +19,7 @@ class HealthcareController extends Controller
 
     public function index()
     {
+        session()->pull('health_thread_id', 'default');
         return view('healthcare');
     }
 
@@ -38,7 +39,7 @@ class HealthcareController extends Controller
     private function generateResponse($messageBody, $client)
     {
 
-        if(session()->get('health_thread_id'))
+        if(session()->has('health_thread_id'))
         {
             $this->thread_id = session()->get('thread_id');
         }
